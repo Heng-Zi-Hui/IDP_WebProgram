@@ -18,7 +18,7 @@
 
 -- database creation with name `shoeshop`
 create database if not exists shoeshop;
-use studentdb;
+use shoeshop;
 
 --
 -- Table structure for table `customer`
@@ -56,7 +56,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `shoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `item` (
+CREATE TABLE `shoes` (
   `itemId` int(11) NOT NULL AUTO_INCREMENT,
   `itemDescription` varchar(512) NOT NULL,	/* Chuck 70 - Hi - Black */
   `brand` varchar(128) NOT NULL,			/* eg. Converse */
@@ -76,7 +76,7 @@ CREATE TABLE `item` (
 
 LOCK TABLES `shoes` WRITE;
 /*!40000 ALTER TABLE `shoes` DISABLE KEYS */;
-INSERT INTO `shoes` VALUES ('Stan Smith Shoes - Original - Blue','Adidas','unisex','lifestyle',150.00,75,'stanSmithShoesOriginalBlue.jpg',25),
+INSERT INTO `shoes` (`itemDescription`, `brand`, `sex`, `category`,`price`,`points`,`imageFile`,`stock`) VALUES ('Stan Smith Shoes - Original - Blue','Adidas','unisex','lifestyle',150.00,75,'stanSmithShoesOriginalBlue.jpg',25),
 						   ('Stan Smith Shoes - Original - Cloud White','Adidas','unisex','lifestyle',150.00,75,'stanSmithShoesOriginalCloudWhite.jpg',5),
                            ('Stan Smith Shoes - Original - Green','Adidas','unisex','lifestyle',150.00,75,'stanSmithShoesOriginalGreen.jpg',10),
                            ('Yeezy Slides - Black','Adidas','unisex','slides',120.00,60,'yeezySlidesBlack.jpeg',7),
