@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/login.css"> <%--Link to css--%>
+        <link rel="icon" type="image/png" href="images/ZacZee's-logos_white.png"/> <%--Favicon--%>
         <title>Registration Form</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +21,14 @@
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
-        <div>
-            <button style="float: left"><a href="index.jsp" ><b>Mõte Inc</b></a> </button>
+        <div class="navbar">
+            <a href="index.jsp" ><img src="images/ZacZee's-logos_white.png" alt="ZacZee's" width="20" Height="20"/></a>
              
             
             <% if(c == null){ %>
             
-            <button style="float: left"><a href="register.jsp" >Register</a> </button>
-            <button><a href="login.jsp" ><b>Login</b></a> </button>
+            <a href="register.jsp" >Register</a>
+            <a href="login.jsp" >Login</a>
             
             <% }else{ %>
             
@@ -52,8 +54,32 @@
             <font color="red">
                     <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
             </font>
-            
-            Full Name*: <input type="text" name="fullName" required/><br/>
+            <div class="container">
+                <label for="name"><b>Full Name</b></label><br/>
+                <input type="text" placeholder="Enter Full Name" name="name" required><br/>
+                
+                <label for="email"><b>Email</b></label><br/>
+                <input type="email" placeholder="Enter Email" name="email" required><br/>
+                
+                <label for="address1"><b>Address</b></label><br/>
+                <input type="text" placeholder="Enter Address Line 1" name="address1" required><br/>
+                <input type="text" placeholder="Enter Address Line 2" name="address2" required><br/>
+                
+                <label for="postalCode"><b>Postal Code</b></label><br/>
+                <input type="text" placeholder="Enter Postal Code" name="postalCode" required><br/>
+                
+                <label for="mobile"><b>Mobile Number</b></label><br/>
+                <input type="text" placeholder="Enter Mobile Number" name="mobile" required><br/>
+                
+                <label for="password"><b>Password</b></label><br/>
+                <input type="password" placeholder="Enter Password" name="password" required><br/>
+                
+                <label for="confirmPassword"><b>Confirm Password</b></label><br/>
+                <input type="password" placeholder="Enter Password Again" name="confirmPassword" required><br/>
+                
+                <button type="submit" value="Register">Register</button>
+            </div>
+            <%--Full Name*: <input type="text" name="fullName" required/><br/>
             Email*: <input type="email" name="email" required/><br/>
             Address line1*: <input type="text" name="address1" required/><br/>
             Address line2 : <input type="text" name="address2" /><br/>
@@ -62,7 +88,7 @@
             Password*: <input type="password" name="password" required/><br/>
             Confirm Password*: <input type="password" name="confirmPassword" required/><br/>
 
-            <input type="submit" value="Register"/>
+            <input type="submit" value="Register"/>--%>
         </form>
     </body>
 </html>

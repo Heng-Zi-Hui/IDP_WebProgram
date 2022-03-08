@@ -9,14 +9,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 /* Bordered form */
 form {
-  border: 3px solid #f1f1f1;
-  background-color: #FFFFFF;
+  //border: 3px solid #f1f1f1;
+  background-color: rgba(255,255,255,0.3);
   margin: auto;
   width: 430px;
 }
 
 /*full width inputs*/
-input[type=email], input[type=password] {
+input[type=email], input[type=password], input[type=text] {
   width: 400px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -51,7 +51,10 @@ button:hover {
 /* Background image*/
 body {
     color: #000000;
-    background-image: url("../images/background_image.jpg"); /* Pick a better image for the shop */
+    background-image: url("../images/backgroundImage.jpeg"); /* Pick a better image for the shop */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* Title heading*/
@@ -64,6 +67,7 @@ h1 {
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
+  position: relative;
 }
 
 /* Links inside the navbar */
@@ -74,4 +78,10 @@ h1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+/* Adjust logo size in nav*/
+img {
+  max-width: 100%;
+  height: auto;
 }
