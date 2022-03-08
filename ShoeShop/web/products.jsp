@@ -12,7 +12,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Products</title> <!-- heyo -->
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="icon" type="image/png" href="images/ZacZee's-logos_white.png"/> <%--Favicon--%>
+        <title>Products</title> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -21,27 +23,26 @@
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
-        <div>
-            <button style="float: left"><a href="index.jsp" ><b>Mõte Inc</b></a> </button>
-             
+        <div class="navbar">
+            <a href="index.jsp" ><img src="images/ZacZee's-logo-nav.png" alt="ZacZee's" width="30" Height="30"/></a> 
             
             <% if(c == null){ %>
             
-            <button style="float: left"><a href="register.jsp" >Register</a> </button>
-            <button><a href="login.jsp" ><b>Login</b></a> </button>
+            <a href="register.jsp" >Register</a>
+            <a href="login.jsp" >Login</a>
             
             <% }else{ %>
             
-            <form action="search" method="post" style="float: left">
+            <form class="navForm" action="search" method="post" style="float: left">
                 <input type="submit" value="Products"/>
             </form>
-            <form action="cart" method="get" style="float: left">
+            <form class="navForm" action="cart" method="get" style="float: left">
                 <input type="submit" value="Cart"/>
             </form> 
-            <form action="profile" method="get" style="float: left">
+            <form class="navForm" action="profile" method="get" style="float: left">
                 <input type="submit" value="Profile"/>
-            </form> 
-            <form action="logout" method="post">
+            </form>
+            <form class="navForm" action="logout" method="post">
                 <input type="submit" value="Logout"/>
             </form>
             
@@ -51,14 +52,18 @@
         <h1>Products</h1>
         <form action="search" method="Post">
             <p>
-                Search:<input type="text" name="searchterm" required/>
-                <input type="submit" value="Search"/><br/>
-                
-            </p>
+                <%--Search:<input type="text" name="searchterm" required/>
+                <input type="submit" value="Search"/><br/>--%>
+                <div class="searchField">
+                <input type="text" placeholder="Search Item Name" name="searchterm"" required>
+                <button class="searchBttn" type="submit" value="Search"/><img icon="search" src="images/search.ico" width="20px" height='20px'/></button><br/>
+                </div>
+            </p><br/><br/>
         </form>
         <font color="red">
                     <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
         </font>
+            <%--
             <table>
                 <tr>
                     <td></td>
@@ -105,7 +110,36 @@
             %>
             
             </table>
-        
+            --%>
+            
+            <% 
+            List<Product> searchresult = (ArrayList<Product>) session.getAttribute("searchresult");
+            
+            if(searchresult == null || searchresult.size() <= 0){
+            %>
+            <tr><td colspan="5">(No result is found)</td></tr>
+            <%
+            }else{
+                for(Product product:searchresult){
+                %>
+                <div class="outergrid">
+                    <div class="innergrid">
+                        <div><img src="images/<%=product.getImageFile()%>" alt="product image"/></div>
+                        <div><%=product.getDescription()%></div>
+                        <div>$<%=product.getPrice()%></div>
+                        <div>
+                            <form action="addproduct" method="post">
+                            <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>
+                            <input type="submit" value="Add to Cart"/>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <%
+                }
+                
+            }
+            %>
         
     </body>
 </html>

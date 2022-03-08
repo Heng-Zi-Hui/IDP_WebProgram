@@ -97,8 +97,8 @@ INSERT INTO `shoes` (`itemDescription`, `brand`, `sex`, `category`,`price`,`poin
                            ('Mexico 66 SD - Cream','Onitsuka Tiger','unisex','lifestyle',199.00,99,'mexico66SDCream.jpeg',15),
                            ('Dentigre LS - Birch','Onitsuka Tiger','unisex','sports',229.00,114,'dentigreLSBirch.jpeg',17),
                            ('Mercedes F1 R-Cat Machina Shoes - White','Puma','unisex','sports',79.00,114,'mercedesF1R-CatMachinaShoesWhite.jpg',20),
-                           ('Popcat 20 Sandals - Black','Puma','men','slides',39.00,19,'popcat20SandalsBlack.jpeg',10),
-                           ('Popcat 20 Sandals - White','Puma','women','slides',39.00,19,'popcat20SandalsWhite.jpeg',10),
+                           ('Popcat 20 Sandals - Black','Puma','men','slides',39.00,19,'popcat20SandalsBlack.jpg',10),
+                           ('Popcat 20 Sandals - White','Puma','women','slides',39.00,19,'popcat20SandalsWhite.jpg',10),
                            ('200 - Blue','New Balance','unisex','slides',49.00,24,'200Blue.jpg',15),
                            ('Vision Racer - Kumquat','New Balance','unisex','running',209.00,104,'visionRacerKumquat.jpg',25);
 /*!40000 ALTER TABLE `shoes` ENABLE KEYS */;

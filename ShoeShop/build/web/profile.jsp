@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/master.css"> <%--Link to css--%>
+        <link rel="icon" type="image/png" href="images/ZacZee's-logos_white.png"/> <%--Favicon--%>
         <title>Profile</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,27 +20,27 @@
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
-        <div>
-            <button style="float: left"><a href="index.jsp" ><b>Mõte Inc</b></a> </button>
+        <div class="navbar">
+            <a href="index.jsp" ><img src="images/ZacZee's-logo-nav.png" alt="ZacZee's" width="30" Height="30"/></a>
              
             
             <% if(c == null){ %>
             
-            <button style="float: left"><a href="register.jsp" >Register</a> </button>
-            <button><a href="login.jsp" ><b>Login</b></a> </button>
+            <a href="register.jsp" >Register</a>
+            <a href="login.jsp" >Login</a>
             
             <% }else{ %>
             
-            <form action="search" method="post" style="float: left">
+            <form class="navForm" action="search" method="post" style="float: left">
                 <input type="submit" value="Products"/>
             </form>
-            <form action="cart" method="get" style="float: left">
+            <form class="navForm" action="cart" method="get" style="float: left">
                 <input type="submit" value="Cart"/>
             </form> 
-            <form action="profile" method="get" style="float: left">
+            <form class="navForm" action="profile" method="get" style="float: left">
                 <input type="submit" value="Profile"/>
             </form> 
-            <form action="logout" method="post">
+            <form class="navForm" action="logout" method="post">
                 <input type="submit" value="Logout"/>
             </form>
             
@@ -46,7 +48,8 @@
         </div>
         
         <h1>Your Profile</h1>
-        
+        <div class="formborder textalignment">
+            
             Full Name: <b><%=c.getFullName()%></b><br/>
             Email: <b><%=c.getEmail()%></b><br/>
             Address line1: <b><%=c.getAddress1()%></b><br/>
@@ -59,6 +62,6 @@
             <p>
                 <button><a href="changePassword.jsp">Change Password</a></button>
             </p>
-
+        </div>
     </body>
 </html>

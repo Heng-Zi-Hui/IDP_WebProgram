@@ -59,7 +59,7 @@ public class AddToCartServlet extends HttpServlet{
                         "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
                         "root", "xxxx");
                 
-                preparedStatement = connection.prepareStatement("SELECT * FROM item WHERE itemId = ?");
+                preparedStatement = connection.prepareStatement("SELECT * FROM shoes WHERE itemId = ?");
                 preparedStatement.setInt(1, Integer.parseInt(itemId));
                 resultset = preparedStatement.executeQuery();
 

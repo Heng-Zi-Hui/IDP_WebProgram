@@ -9,8 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/login.css"> <%--Link to css--%>
-        <link rel="icon" type="image/png" href="images/ZacZee's-logos_white.png"/> <%--Favicon--%>
+        <link rel="stylesheet" href="css/master.css"> <%--Link to css--%>
+        <link rel="icon" type="image/png" href="images/ZacZee's-logos-white.png"/> <%--Favicon--%>
         <title>Registration Form</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
             %>
         
         <div class="navbar">
-            <a href="index.jsp" ><img src="images/ZacZee's-logos_white.png" alt="ZacZee's" width="20" Height="20"/></a>
+            <a href="index.jsp" ><img src="images/ZacZee's-logo-nav.png" alt="ZacZee's" width="30" Height="30"/></a>
              
             
             <% if(c == null){ %>
@@ -32,16 +32,16 @@
             
             <% }else{ %>
             
-            <form action="search" method="post" style="float: left">
+            <form class="navForm" action="search" method="post" style="float: left">
                 <input type="submit" value="Products"/>
             </form>
-            <form action="cart" method="get" style="float: left">
+            <form class="navForm" action="cart" method="get" style="float: left">
                 <input type="submit" value="Cart"/>
             </form> 
-            <form action="profile" method="get" style="float: left">
+            <form class="navForm" action="profile" method="get" style="float: left">
                 <input type="submit" value="Profile"/>
             </form> 
-            <form action="logout" method="post">
+            <form class="navForm" action="logout" method="post">
                 <input type="submit" value="Logout"/>
             </form>
             
@@ -50,13 +50,13 @@
         
         <h1>Registration Form</h1>
         
-        <form name="customer" action="validate" method="post" onsubmit="return validateForm()">
+        <form class="formborder" name="customer" action="validate" method="post" onsubmit="return validateForm()">
             <font color="red">
                     <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
             </font>
             <div class="container">
-                <label for="name"><b>Full Name</b></label><br/>
-                <input type="text" placeholder="Enter Full Name" name="name" required><br/>
+                <label for="fullName"><b>Full Name</b></label><br/>
+                <input type="text" placeholder="Enter Full Name" name="fullName" required><br/>
                 
                 <label for="email"><b>Email</b></label><br/>
                 <input type="email" placeholder="Enter Email" name="email" required><br/>
@@ -77,7 +77,7 @@
                 <label for="confirmPassword"><b>Confirm Password</b></label><br/>
                 <input type="password" placeholder="Enter Password Again" name="confirmPassword" required><br/>
                 
-                <button type="submit" value="Register">Register</button>
+                <button class="loginRegiBttn" type="submit" value="Register">Register</button>
             </div>
             <%--Full Name*: <input type="text" name="fullName" required/><br/>
             Email*: <input type="email" name="email" required/><br/>
