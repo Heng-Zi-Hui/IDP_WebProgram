@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/web/products.jsp</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/ChangePasswordServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/LogoutServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/ViewProfileServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/SearchProductsServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/CheckoutServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/build.xml</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/AddToCartServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/AddUserServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/AuthenticationServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/ComputeCartServlet.java</file>
+            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/ValidationServlet.java</file>
         </group>
     </open-files>
 </project-private>

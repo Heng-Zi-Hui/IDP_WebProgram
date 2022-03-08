@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import javax.sql.DataSource;
+import java.sql.DriverManager;
 
 /**
  *
@@ -33,9 +33,6 @@ import javax.sql.DataSource;
  */
 @WebServlet("/changePassword")
 public class ChangePasswordServlet extends HttpServlet{
-    
-    @Resource(name="jdbc/jed")
-    private DataSource moteIncDB;
     
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -75,7 +72,9 @@ public class ChangePasswordServlet extends HttpServlet{
             
             try {
 
-                    connection = moteIncDB.getConnection();
+                    connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                        "root", "xxxx");
                     connection.setAutoCommit(false);
                     
                     preparedStatement = connection.prepareStatement("SELECT password FROM customer WHERE customerId = ?");

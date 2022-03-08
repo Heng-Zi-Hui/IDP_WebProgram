@@ -61,10 +61,14 @@
         </font>
             <table>
                 <tr>
+                    <td></td>
                     <td><b>Item Description</b></td>
                     <td><b>Brand</b></td>
+                    <td>Sex</td>
+                    <td>Category</td>
                     <td><b>Price</b></td>
                     <td><b>Points</b></td>
+                    <td>Stock</td>
                     <td></td>
                 </tr>
                 
@@ -79,10 +83,14 @@
                 for(Product product:searchresult){
                 %>
                 <tr>
+                    <td><%=product.getImageFile()%></td>
                     <td><%=product.getDescription()%></td>
                     <td><%=product.getBrand()%></td>
+                    <td><%=product.getSex()%></td>
+                    <td><%=product.getCategory()%></td>
                     <td>$<%=product.getPrice()%></td>
                     <td><%=product.getPoints()%></td>
+                    <td><%=product.getStock()%></td>
                     <td>
                         <form action="addproduct" method="post">
                             <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>

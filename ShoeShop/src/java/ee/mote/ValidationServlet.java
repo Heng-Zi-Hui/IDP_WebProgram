@@ -11,14 +11,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
+import java.sql.DriverManager;
 import org.apache.commons.validator.routines.EmailValidator;
 
 /**
@@ -28,9 +28,6 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 @WebServlet("/validate")
 public class ValidationServlet extends HttpServlet{
-    
-    @Resource(name="jdbc/jed")
-    private DataSource moteIncDB;
     
     @Override
         protected void doPost(HttpServletRequest request,
@@ -52,7 +49,9 @@ public class ValidationServlet extends HttpServlet{
             
             try {
                 //Get the connection, prepare the statement and run the query
-                connection = moteIncDB.getConnection();
+                connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                        "root", "xxxx");
                 preparedStatement = connection.prepareStatement("SELECT count(*) FROM customer WHERE email = ?");
                 preparedStatement.setString(1, email);
                 resultset = preparedStatement.executeQuery();

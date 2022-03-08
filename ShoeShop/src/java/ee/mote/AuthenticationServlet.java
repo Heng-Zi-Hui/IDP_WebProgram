@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import javax.sql.DataSource;
+import java.sql.DriverManager;
 
 /**
  *
@@ -34,9 +34,6 @@ import javax.sql.DataSource;
 
 @WebServlet("/authenticate")
 public class AuthenticationServlet extends HttpServlet{
-    
-    @Resource(name="jdbc/jed")
-    private DataSource moteIncDB;
     
     @Override
         protected void doPost(HttpServletRequest request,
@@ -69,8 +66,9 @@ public class AuthenticationServlet extends HttpServlet{
                 
                 try {
 
-                    connection = moteIncDB.getConnection();
-                    
+                    connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                        "root", "xxxx");
                     
                     preparedStatement = connection.prepareStatement("SELECT * FROM customer WHERE email = ?");
                     preparedStatement.setString(1, email);
