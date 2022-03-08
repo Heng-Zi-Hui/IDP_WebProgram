@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/login.css">
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,14 +19,14 @@
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
-        <div>
-            <button style="float: left"><a href="index.jsp" ><b>Mõte Inc</b></a> </button>
+        <div class="navbar">
+            <a href="index.jsp" >ZacZee's</a>
              
             
             <% if(c == null){ %>
             
-            <button style="float: left"><a href="register.jsp" >Register</a> </button>
-            <button><a href="login.jsp" ><b>Login</b></a> </button>
+            <a href="register.jsp" >Register</a>
+            <a href="login.jsp" >Login</a>
             
             <% }else{ %>
             
@@ -52,10 +53,13 @@
         </font>
         
         <form name="customer" action="authenticate" method="post">
-            Email: <input type="email" name="email" required/><br/>
-            Password: <input type="password" name="password" required/><br/>
-
-            <input type="submit" value="Login"/>
+            <div class="container">
+                <label for="email"><b>Email</b></label><br/>
+                <input type="email" placeholder="Enter Email" name="email" required><br/>
+                <label for="password"><b>Password</b></label><br/>
+                <input type="password" placeholder="Enter Password" name="password" required><br/>
+                <button type="submit">Login</button>
+            </div>
         </form>
     </body>
 </html>
