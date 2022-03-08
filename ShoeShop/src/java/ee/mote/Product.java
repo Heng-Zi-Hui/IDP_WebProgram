@@ -19,12 +19,48 @@ public class Product implements Serializable{
     private int itemId;
     private String description;
     private String brand;
+    private String sex;
+    private String category;
     private float price;
     private int points;
+    private String imageFile;
+    private int stock;
 
     public Product() {
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(String imageFile) {
+        this.imageFile = imageFile;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    
     public int getItemId() {
         return itemId;
     }

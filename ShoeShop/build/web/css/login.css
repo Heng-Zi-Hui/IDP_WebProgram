@@ -51,7 +51,7 @@ button:hover {
 /* Background image*/
 body {
     color: #000000;
-    background-image: url("../images/background_image.jpg");
+    background-image: url("../images/background_image.jpg"); /* Pick a better image for the shop */
 }
 
 /* Title heading*/

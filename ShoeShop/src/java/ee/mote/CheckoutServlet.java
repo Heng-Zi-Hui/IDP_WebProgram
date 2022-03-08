@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -27,7 +27,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import javax.sql.DataSource;
+import java.sql.DriverManager;
 
 /**
  *
@@ -36,9 +36,6 @@ import javax.sql.DataSource;
 
 @WebServlet("/checkout")
 public class CheckoutServlet extends HttpServlet{
-    
-    @Resource(name="jdbc/jed")
-    private DataSource moteIncDB;
     
     @Override
         protected void doPost(HttpServletRequest request,
@@ -77,7 +74,9 @@ public class CheckoutServlet extends HttpServlet{
                 try {
             
             // Get the connection from the DataSource
-            connection = moteIncDB.getConnection();
+            connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                        "root", "xxxx");
             //Set auto commit to false to control the transaction
             connection.setAutoCommit(false);
             // Create a statement using the Connection

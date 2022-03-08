@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import javax.sql.DataSource;
+import java.sql.DriverManager;
 
 /**
  *
@@ -32,9 +32,6 @@ import javax.sql.DataSource;
 
 @WebServlet("/addproduct")
 public class AddToCartServlet extends HttpServlet{
-    
-    @Resource(name="jdbc/jed")
-    private DataSource moteIncDB;
     
     @Override
         protected void doPost(HttpServletRequest request,
@@ -58,7 +55,9 @@ public class AddToCartServlet extends HttpServlet{
             }
             
             try{
-                connection = moteIncDB.getConnection();
+                connection = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                        "root", "xxxx");
                 
                 preparedStatement = connection.prepareStatement("SELECT * FROM item WHERE itemId = ?");
                 preparedStatement.setInt(1, Integer.parseInt(itemId));
