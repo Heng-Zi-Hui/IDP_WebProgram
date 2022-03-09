@@ -9,6 +9,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ee.mote.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +21,8 @@
     </head>
     <body>
         <% 
+                DecimalFormat dcf = new DecimalFormat("#0.00");
+                request.setAttribute("dcf", dcf);
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
@@ -127,7 +130,7 @@
                     <div class="innergrid">
                         <div><img src="images/<%=product.getImageFile()%>" alt="product image"/></div>
                         <div><%=product.getDescription()%></div>
-                        <div>$<%=product.getPrice()%></div>
+                        <div>$<%=dcf.format(product.getPrice())%></div>
                         <div>
                             <form action="addproduct" method="post">
                             <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>

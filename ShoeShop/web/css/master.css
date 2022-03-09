@@ -238,14 +238,15 @@ h1 {
     height: 100%;
 }
 .title{
-    padding-top: 5px;
-    line-height: 10px;
+    padding-left:5px;
+    line-height: 25px;
     font-size: 25px;
     font-family: ‘Open Sans’;
     font-weight: 800;
     color: #202020;
 }
 .subtitle{
+    padding-left:5px;
     line-height: 10px;
     font-size: 18px;
     font-family: ‘Open Sans’;
@@ -271,6 +272,7 @@ h1 {
     font-weight: 900;
     color: #202020;
     cursor: pointer;
+    border:none;
 }
 .count{
     font-size: 20px;

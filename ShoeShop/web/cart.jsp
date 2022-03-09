@@ -9,6 +9,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +21,8 @@
     </head>
     <body>
         <% 
+                DecimalFormat dcf = new DecimalFormat("#0.00");
+                request.setAttribute("dcf", dcf);
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
@@ -129,7 +132,7 @@
                 </div>
                 
                 <div class="prices">
-                    <div class="amount">$<%=cartline.getPrice()%></div>
+                    <div class="amount">$<%=dcf.format(cartline.getPrice())%></div>
 <!--                    <div class="remove"><u>Remove</u></div>-->
                     <form action="removeCartLine" method="get">
                         <input type="hidden" name="itemId" value="<%=cartline.getItemId()%>"/>
@@ -153,7 +156,7 @@
                             <div class="items"><%=session.getAttribute("totalItems")%> items</div>
                             <div class="items"><%=session.getAttribute("totalPoints")%> points</div>
                         </div>
-                        <div class="total-amount">$<%=session.getAttribute("totalPrice")%></div>
+                        <div class="total-amount">$<%=dcf.format(session.getAttribute("totalPrice"))%></div>
                     </div>
                     <form action="checkout" method="post">
                         <input class="button" type="submit" value="Checkout"/>
