@@ -6,6 +6,7 @@
 
 package ee.mote;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.util.List;
 import jakarta.servlet.ServletException;
@@ -20,36 +21,35 @@ import jakarta.servlet.http.HttpSession;
  * @author fepit
  */
 
-@WebServlet("/cart")
+@WebServlet("/decreaseQuantity")
 //@WebServlet(name = "compute", urlPatterns = {"/compute"})
-public class ComputeCartServlet extends HttpServlet{
+public class DecreaseQuantityServlet extends HttpServlet{
     
     @Override
         protected void doGet(HttpServletRequest request,
                 HttpServletResponse response)
                 throws ServletException, IOException {
             
-            int totalPoints = 0;
-            float totalPrice = 0;
-            int totalItems = 0;
+            String itemId = request.getParameter("itemId");
+            int id = Integer.valueOf(itemId);
             
             HttpSession session = request.getSession();
             List<CartLine> cart = (List<CartLine>) session.getAttribute("cart");
             
-            if(cart != null)
-            {
-                for(int i=0; i<cart.size(); i++){
-                    
-                    totalPoints += cart.get(i).getQuantity() * cart.get(i).getPoints();
-                    totalPrice += cart.get(i).getQuantity() * cart.get(i).getPrice();
-                    totalItems += cart.get(i).getQuantity();
+            for(int i=0; i<cart.size(); i++){
+                if(cart.get(i).getItemId()==id)
+                {
+                    if(cart.get(i).getQuantity()==1){
+                        cart.remove(i);
+                    }else{
+                        cart.get(i).decreaseQty(1);
+                    }
                 }
             }
             
-            session.setAttribute("totalItems", totalItems);
-            session.setAttribute("totalPoints", totalPoints);
-            session.setAttribute("totalPrice", totalPrice);
-            response.sendRedirect(this.getServletContext().getContextPath() + "/cart.jsp");
+            session.setAttribute("cart",cart);
+            RequestDispatcher rd = request.getRequestDispatcher("/cart");
+            rd.forward(request, response);
             
         }
     

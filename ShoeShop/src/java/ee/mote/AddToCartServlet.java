@@ -41,8 +41,7 @@ public class AddToCartServlet extends HttpServlet{
             
             String itemId = request.getParameter("productId");
             String size = request.getParameter("size");
-            String qty = request.getParameter("quantity");
-            int qtyToAdd = Integer.valueOf(qty);
+            int qtyToAdd = 1;
             
             Connection connection = null;
             PreparedStatement preparedStatement = null;
@@ -89,14 +88,14 @@ public class AddToCartServlet extends HttpServlet{
 
                     if(repeat==true)
                     {
-                        if(cart.get(repeatIndex).getQuantity()==10)
-                        {
-                            request
-                                   .setAttribute("message",
-                                    "You can only order a maximum of 10 of each item");
-                        }
-                        else
-                        {
+//                        if(cart.get(repeatIndex).getQuantity()==10)
+//                        {
+//                            request
+//                                   .setAttribute("message",
+//                                    "You can only order a maximum of 10 of each item");
+//                        }
+//                        else
+//                        {
                             if(cart.get(repeatIndex).getQuantity()+qtyToAdd > stock){
                                 request
                                    .setAttribute("message",
@@ -109,7 +108,7 @@ public class AddToCartServlet extends HttpServlet{
                                     "Item successfully added to cart");
                             }
                             
-                        }
+//                        }
 
                     }
                     else
@@ -128,6 +127,7 @@ public class AddToCartServlet extends HttpServlet{
                         line.setPoints(resultset.getInt("points"));
                         line.setSize(size);
                         line.setImageFile(resultset.getString("imageFile"));
+                        line.setStock(resultset.getInt("stock"));
 
                         cart.add(line);
 
@@ -148,6 +148,7 @@ public class AddToCartServlet extends HttpServlet{
                     line.setPoints(resultset.getInt("points"));
                     line.setImageFile(resultset.getString("imageFile"));
                     line.setSize(size);
+                    line.setStock(resultset.getInt("stock"));
 
                     cart.add(line);
                     

@@ -49,34 +49,34 @@ public class SearchProductsServlet extends HttpServlet{
             {
                 try {
             
-            // Get the connection from the DataSource
-            connection = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
-                        "root", "xxxx");
-            // Create a statement using the Connection
-            statement = connection.prepareStatement(sqlSelect);
-            
-            statement.setString(1, "%" + searchterm + "%");
-            // Make a query to the DB using ResultSet through the Statement
-            resultset = statement.executeQuery();
-            
-            //resultset is like a pointer
-            while(resultset.next()){
-                //Create a book object
-                Product product = new Product();
-                //Pull out data from resultset put it in the book
-                product.setItemId(resultset.getInt("itemId"));
-                product.setDescription(resultset.getString("itemDescription"));
-                product.setBrand(resultset.getString("brand"));
-                product.setSex(resultset.getString("sex"));
-                product.setCategory(resultset.getString("category"));
-                product.setPrice(resultset.getFloat("price"));
-                product.setPoints(resultset.getInt("points"));
-                product.setImageFile(resultset.getString("imageFile"));
-                product.setStock(resultset.getInt("stock"));
-                
-                results.add(product);
-            }
+                    // Get the connection from the DataSource
+                    connection = DriverManager.getConnection(
+                                "jdbc:mysql://localhost:3306/shoeshop?allowPublicKeyRetrieval=true&serverTimezone=UTC",
+                                "root", "xxxx");
+                    // Create a statement using the Connection
+                    statement = connection.prepareStatement(sqlSelect);
+
+                    statement.setString(1, "%" + searchterm + "%");
+                    // Make a query to the DB using ResultSet through the Statement
+                    resultset = statement.executeQuery();
+
+                    //resultset is like a pointer
+                    while(resultset.next()){
+                        //Create a book object
+                        Product product = new Product();
+                        //Pull out data from resultset put it in the book
+                        product.setItemId(resultset.getInt("itemId"));
+                        product.setDescription(resultset.getString("itemDescription"));
+                        product.setBrand(resultset.getString("brand"));
+                        product.setSex(resultset.getString("sex"));
+                        product.setCategory(resultset.getString("category"));
+                        product.setPrice(resultset.getFloat("price"));
+                        product.setPoints(resultset.getInt("points"));
+                        product.setImageFile(resultset.getString("imageFile"));
+                        product.setStock(resultset.getInt("stock"));
+
+                        results.add(product);
+                    }
             
         } catch (SQLException ex) {
             Logger.getLogger(SearchProductsServlet.class.getName()).log(Level.SEVERE, null, ex);

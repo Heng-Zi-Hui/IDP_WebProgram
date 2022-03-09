@@ -113,16 +113,28 @@
                 </div>
                 <div class="counter"></div>
                 <div class="prices"></div>
-                
+                <div><%=cartline.getStock()%> in stock</div>
                 <div class="counter">
-                    <div class="btn">-</div>
+                    <form action="decreaseQuantity" method="get">
+                        <input type="hidden" name="itemId" value="<%=cartline.getItemId()%>"/>
+                        <input class="btn" type="submit" value="-"/>
+                    </form>
+<!--                    <div class="btn">-</div>-->
                     <div class="count"><%=cartline.getQuantity()%></div>
-                    <div class="btn">+</div>
+<!--                    <div class="btn">+</div>-->
+                    <form action="increaseQuantity" method="get">
+                        <input type="hidden" name="itemId" value="<%=cartline.getItemId()%>"/>
+                        <input class="btn" type="submit" value="+"/>
+                    </form>
                 </div>
                 
                 <div class="prices">
                     <div class="amount">$<%=cartline.getPrice()%></div>
-                    <div class="remove"><u>Remove</u></div>
+<!--                    <div class="remove"><u>Remove</u></div>-->
+                    <form action="removeCartLine" method="get">
+                        <input type="hidden" name="itemId" value="<%=cartline.getItemId()%>"/>
+                        <input class="remove" type="submit" value="Remove"/>
+                    </form>
                 </div>
                 
             </div>
@@ -138,7 +150,7 @@
                     <div class="total">
                         <div>
                             <div class="Subtotal">Sub-Total</div>
-                            <div class="items">2 items</div>
+                            <div class="items"><%=session.getAttribute("totalItems")%> items</div>
                             <div class="items"><%=session.getAttribute("totalPoints")%> points</div>
                         </div>
                         <div class="total-amount">$<%=session.getAttribute("totalPrice")%></div>

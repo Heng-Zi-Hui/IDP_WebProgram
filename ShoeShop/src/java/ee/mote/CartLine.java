@@ -24,6 +24,15 @@ public class CartLine implements Serializable{
     private int points;
     private String size;
     private String imageFile;
+    private int stock;
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
     
     public CartLine() {
@@ -31,6 +40,10 @@ public class CartLine implements Serializable{
     
     public void increaseQty(int qty){
         quantity += qty;
+    }
+    
+    public void decreaseQty(int qty){
+        quantity -= qty;
     }
 
     public int getItemId() {

@@ -34,12 +34,12 @@ import java.sql.DriverManager;
 public class RemoveFromCartServlet extends HttpServlet{
     
     @Override
-        protected void doPost(HttpServletRequest request,
+        protected void doGet(HttpServletRequest request,
                 HttpServletResponse response)
                 throws ServletException, IOException {
             
             
-            int itemId = Integer.valueOf(request.getParameter("productId"));
+            int itemId = Integer.valueOf(request.getParameter("itemId"));
             
             HttpSession session = request.getSession();
             
@@ -53,7 +53,7 @@ public class RemoveFromCartServlet extends HttpServlet{
                 }
 
             session.setAttribute("cart",cart);
-            RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/cart");
             rd.forward(request, response);
         }
          
