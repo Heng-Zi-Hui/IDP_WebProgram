@@ -17,6 +17,25 @@
         <title>Products</title> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            $(document).ready(function() {
+			$('.minus').click(function () {
+				var $input = $(this).parent().getElementById('qtyInput');
+				var count = parseInt($input.val()) - 1;
+				count = count < 1 ? 1 : count;
+				$input.val(count);
+				$input.change();
+				return false;
+			});
+			$('.plus').click(function () {
+				var $input = $(this).parent().getElementById('qtyInput');
+				$input.val(parseInt($input.val()) + 1);
+				$input.change();
+				return false;
+			});
+		});
+        </script>
     </head>
     <body>
         <% 
@@ -173,6 +192,13 @@
                                     }
                                 %>
                             </select>
+                            <div class="qtyNumber">
+                                <span class="minus">-</span>
+                                <input name="quantity" id="qtyInput" type="text" value="1"/>
+                                <span class="plus">+</span>
+                            </div><br>
+                            <%=product.getStock()%> in stock
+                            <br>
                             <input type="submit" value="Add to Cart"/>
                         </form>
                         </div>

@@ -107,6 +107,11 @@ public class CheckoutServlet extends HttpServlet{
                     preparedStatement.setInt(3, cartline.getQuantity());
                     preparedStatement.setString(4, cartline.getSize());
                     preparedStatement.executeUpdate();
+                    
+                    preparedStatement = connection.prepareStatement("UPDATE shoes SET stock = stock-? WHERE itemid = ?");
+                    preparedStatement.setInt(1, cartline.getQuantity());
+                    preparedStatement.setInt(2, cartline.getItemId());
+                    preparedStatement.executeUpdate();
                 }
             connection.commit();
             cart.clear();
