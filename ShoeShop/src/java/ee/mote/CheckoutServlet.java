@@ -100,11 +100,12 @@ public class CheckoutServlet extends HttpServlet{
             int orderId = resultset.getInt(1);
             
                 for (CartLine cartline : cart) {
-                    preparedStatement = connection.prepareStatement("INSERT INTO orderdetails (orderid, itemid, quantity) "
-                                                                  + "VALUES(?, ?, ?)");
+                    preparedStatement = connection.prepareStatement("INSERT INTO orderdetails (orderid, itemid, quantity, size) "
+                                                                  + "VALUES(?, ?, ?, ?)");
                     preparedStatement.setInt(1, orderId);
                     preparedStatement.setInt(2, cartline.getItemId());
                     preparedStatement.setInt(3, cartline.getQuantity());
+                    preparedStatement.setString(4, cartline.getSize());
                     preparedStatement.executeUpdate();
                 }
             connection.commit();

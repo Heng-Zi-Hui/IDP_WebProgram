@@ -40,7 +40,7 @@ public class AddToCartServlet extends HttpServlet{
             
             
             String itemId = request.getParameter("productId");
-            
+            String size = request.getParameter("size");
             
             Connection connection = null;
             PreparedStatement preparedStatement = null;
@@ -66,7 +66,13 @@ public class AddToCartServlet extends HttpServlet{
                 resultset.next();
                 int id = resultset.getInt("itemId");
                 
-                if(cart.isEmpty()==false)
+                if(size.equals("empty"))
+                {
+                    request
+                        .setAttribute("message",
+                        "Shoe size is not selected");
+                }
+                else if(cart.isEmpty()==false)
                 {
                     boolean repeat = false;
                     int repeatIndex = -1;
@@ -80,11 +86,11 @@ public class AddToCartServlet extends HttpServlet{
 
                     if(repeat==true)
                     {
-                        if(cart.get(repeatIndex).getQuantity()==50)
+                        if(cart.get(repeatIndex).getQuantity()==10)
                         {
                             request
                                    .setAttribute("message",
-                                    "You can only order a maximum of 50 of each item");
+                                    "You can only order a maximum of 10 of each item");
                         }
                         else
                         {
@@ -105,6 +111,7 @@ public class AddToCartServlet extends HttpServlet{
                         line.setQuantity(1);
                         line.setPrice(resultset.getFloat("price"));
                         line.setPoints(resultset.getInt("points"));
+                        line.setSize(size);
 
                         cart.add(line);
 
@@ -122,6 +129,7 @@ public class AddToCartServlet extends HttpServlet{
                     line.setQuantity(1);
                     line.setPrice(resultset.getFloat("price"));
                     line.setPoints(resultset.getInt("points"));
+                    line.setSize(size);
 
                     cart.add(line);
                     

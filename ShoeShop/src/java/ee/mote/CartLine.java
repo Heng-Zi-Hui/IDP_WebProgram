@@ -22,6 +22,8 @@ public class CartLine implements Serializable{
     private int quantity;
     private float price;
     private int points;
+    private String size;
+
 
     public CartLine() {
     }
@@ -78,6 +80,12 @@ public class CartLine implements Serializable{
         this.points = points;
     }
     
-    
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
     
 }
