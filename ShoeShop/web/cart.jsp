@@ -49,6 +49,7 @@
             <% } %>
         </div>
         
+        <br/><br/><br/>
         <p>
             <form action="search" method="post">
                 <input type="submit" value="Back to shopping"/>

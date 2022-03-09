@@ -48,6 +48,7 @@
             <% } %>
         </div>
         
+        <br/><br/><br/>
         <div class="display">
             <% if(c == null){ %>
             <h1>Welcome to ZacZee's!</h1>

@@ -47,6 +47,7 @@
             <% } %>
         </div>
         
+        <br/><br/><br/>
         <h1>Your Profile</h1>
         <div class="textalignment">
             <img src="images/user.png" alt="user icon" width=50%/><br/>

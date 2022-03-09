@@ -84,7 +84,10 @@ h1 {
     overflow: hidden;
     background-color: #333;
     font-family: Arial;
-    position: relative;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
 }
 
 /* Links inside the navbar */

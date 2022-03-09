@@ -49,6 +49,7 @@
             <% } %>
         </div>
         
+        <br/><br/><br/>
         <h1>Products</h1>
         <form action="search" method="Post">
             <p>

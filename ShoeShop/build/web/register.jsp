@@ -47,7 +47,7 @@
             
             <% } %>
         </div>
-        
+        <br/><br/><br/>
         <h1>Registration Form</h1>
         
         <form class="formborder" name="customer" action="validate" method="post" onsubmit="return validateForm()">
