@@ -111,19 +111,18 @@
             
             </table>
             --%>
-            <div class="outergrid">
-                
+            
             <% 
             List<Product> searchresult = (ArrayList<Product>) session.getAttribute("searchresult");
             
             if(searchresult == null || searchresult.size() <= 0){
             %>
-            
             <tr><td colspan="5">(No result is found)</td></tr>
             <%
             }else{
                 for(Product product:searchresult){
                 %>
+                <div class="outergrid">
                     <div class="innergrid">
                         <div><img src="images/<%=product.getImageFile()%>" alt="product image"/></div>
                         <div><%=product.getDescription()%></div>
@@ -135,12 +134,12 @@
                         </form>
                         </div>
                     </div>
-                
+                </div>
                 <%
                 }
                 
             }
             %>
-            </div>
+        
     </body>
 </html>
