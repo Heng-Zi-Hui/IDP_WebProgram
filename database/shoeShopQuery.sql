@@ -87,7 +87,7 @@ INSERT INTO `shoes` (`itemDescription`, `brand`, `sex`, `category`,`price`,`poin
                            ('Ultraboost 22 Shoes - Turbo','Adidas','women','running',260.00,130,'ultraboost22ShoesTurbo.jpg',7),	
                            ('Chuck 70 - Hi - Black','Converse','unisex','lifestyle',129.90,64,'chuck70HiBlack.jpeg',20),
                            ('Chuck 70 - Hi - Parchment','Converse','unisex','lifestyle',129.90,64,'chuck70HiParchment.jpeg',12),
-                           ('Chuck 70 - Hi - Embroidered Floral','Converse','female','lifestyle',95.00,47,'chuck70HiEmbroideredFloral.jpeg',5),
+                           ('Chuck 70 - Hi - Embroidered Floral','Converse','women','lifestyle',95.00,47,'chuck70HiEmbroideredFloral.jpeg',5),
                            ('Chuck Taylor All Star - Ox - Charcoal','Converse','unisex','lifestyle',75.90,37,'chuckTaylorAllStarOxCharcoal.jpeg',9),
                            ('Chuck Taylor All Star - Ox - Maroon','Converse','unisex','lifestyle',75.90,37,'chuckTaylorAllStarOxMaroon.jpeg',9),
                            ('Jordan Zoom Separate PF - Black','Nike','men','sports',179.00,89,'jordanZoomSeparatePFBlack.jpg',11),
@@ -118,7 +118,7 @@ CREATE TABLE `orderdetails` (
   `size` varchar(128) NOT NULL,		/* eg. Women 8 */
   PRIMARY KEY (`orderid`,`itemid`),
   KEY `ItemId_idx` (`itemid`),
-  CONSTRAINT `ItemId` FOREIGN KEY (`itemid`) REFERENCES `item` (`itemId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `ItemId` FOREIGN KEY (`itemid`) REFERENCES `shoes` (`itemId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `OrderId` FOREIGN KEY (`orderid`) REFERENCES `orders` (`orderid`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

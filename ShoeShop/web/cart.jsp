@@ -60,6 +60,7 @@
         <table>
                 <tr>
                     <td><b>Item Description</b></td>
+                    <td><b>Size(US)</b></td>
                     <td><b>Brand</b></td>
                     <td><b>Quantity</b></td>
                     <td><b>Price</b></td>
@@ -79,6 +80,7 @@
                 %>
                 <tr>
                     <td><%=cartline.getDescription()%></td>
+                    <td><%=cartline.getSize()%></td>
                     <td><%=cartline.getBrand()%></td>
                     <td><%=cartline.getQuantity()%></td>
                     <td>$<%=cartline.getPrice()%></td>
