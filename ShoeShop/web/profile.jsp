@@ -49,14 +49,30 @@
         
         <br/><br/><br/>
         <h1>Your Profile</h1>
-        <div class="textalignment">
-            <img src="images/user.png" alt="user icon" width=50%/><br/>
+        <div class="card">
+            <%--
             Full Name: <b><%=c.getFullName()%></b><br/>
             Email: <b><%=c.getEmail()%></b><br/>
             Address line1: <b><%=c.getAddress1()%></b><br/>
             Address line2: <b><%=c.getAddress2()==null?"-":c.getAddress2()%></b><br/>
             Postal Code: <b><%=c.getPostalCode()%></b><br/>
             Mobile Number: <b><%=c.getMobile()%></b><br/>
+            --%>
+            <br/>
+            <img src="images/user.png" alt="user icon" width=50%/><br/>
+            <h2><%=c.getFullName()%></h2>
+            
+            <p class="contactProfile">
+                <%=c.getEmail()%><br/>
+                <%=c.getMobile()%><br/>
+            </p>
+            
+            <p class="addressProfile">
+                <%=c.getAddress1()%><br/>
+                <%=c.getAddress2()==null?"-":c.getAddress2()%><br/>
+                <%=c.getPostalCode()%><br/>
+            </p>
+            
             <p>
                 You Have <b><%=session.getAttribute("customerPoints")%></b> Points<br/>
             </p>

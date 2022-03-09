@@ -144,7 +144,7 @@ h1 {
 }
 
 /* index.jsp and profile.jsp rounded image adjustment*/
-.displaySub img, .textalignment img {
+.displaySub img, .card img {
     float: center;
     border-radius: 50%;
 }
@@ -177,14 +177,41 @@ h1 {
     width: 300px;
 }
 
-/* text alignment for profile page*/
-.textalignment p{
-    text-align: left;
-    font-size: 15px;
+/* alignment for profile page user card*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
 }
 
-.textalignment {
-    float: center;
-    margin: auto;
-    width: 430px;
+.addressProfile {
+    color: grey;
+    font-size: 20px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card a {
+    color: white;
+}
+
+.card p{
+    
+}
+
+.contactProfile {
+    font-size: 20px;
 }
