@@ -146,6 +146,7 @@ public class AddToCartServlet extends HttpServlet{
                     line.setQuantity(1);
                     line.setPrice(resultset.getFloat("price"));
                     line.setPoints(resultset.getInt("points"));
+                    line.setImageFile(resultset.getString("imageFile"));
                     line.setSize(size);
 
                     cart.add(line);
