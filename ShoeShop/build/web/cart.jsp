@@ -50,14 +50,9 @@
         </div>
         
         <br/><br/><br/>
-        <p>
-            <form action="search" method="post">
-                <input type="submit" value="Back to shopping"/>
-            </form>
-        </p>
-        
         <h1>Your Cart</h1>
         
+        <%--
         <table>
                 <tr>
                     <td><b>Item Description</b></td>
@@ -67,7 +62,7 @@
                     <td><b>Price</b></td>
                     <td><b>Points</b></td>
                     <td></td>
-                </tr>
+                </tr> 
                 
                 <% 
             List<CartLine> cart = (ArrayList<CartLine>) session.getAttribute("cart");
@@ -92,18 +87,68 @@
                 
             }
             %>
-            </table>
-        <p>
-            Points You Would Receive: <b><%=session.getAttribute("totalPoints")%></b><br/>
-            Total Cost: <b>$<%=session.getAttribute("totalPrice")%></b>
-        </p>
-        <p>
-            <font color="red">
-                    <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
-            </font>
-            <form action="checkout" method="post">
-                <input type="submit" value="Checkout"/>
-            </form>
-        </p>
+            </table> --%>
+        
+        <div class="cartContainer">
+        <% 
+            List<CartLine> cart = (ArrayList<CartLine>) session.getAttribute("cart");
+            
+            if(cart == null || cart.size() <= 0){
+            %>
+            <tr><td colspan="5">(You have not added anything in your cart :/)</td></tr>
+            <%
+            }else{
+                for(CartLine cartline:cart){
+                %>
+        
+        
+            <div class="Cart-Items">
+                <%--
+                <div class=”image-box”>
+                    <img src=”images/<%=cartline.getImage()%>” style= height:”120px”; />
+                </div>
+                --%>
+                <div class="about">
+                    <h2 class="title"><%=cartline.getDescription()%></h2>
+                    <h3 class="subtitle"><%=cartline.getBrand()%></<h3>
+                    <h3 class="subtitle"><%=cartline.getSize()%></h3>
+                </div>
+                <div class="counter"></div>
+                <div class="prices"></div>
+                
+                <div class="counter">
+                    <div class="btn">+</div>
+                    <div class="count"><%=cartline.getQuantity()%></div>
+                    <div class="btn">-</div>
+                </div>
+                
+                <div class="prices">
+                    <div class="amount">$<%=cartline.getPrice()%></div>
+                    <div class="remove"><u>Remove</u></div>
+                </div>
+                
+            </div>
+                    
+            <%
+                }
+                
+            }
+            %>
+
+            <hr> 
+                <div class="checkout">
+                    <div class="total">
+                        <div>
+                            <div class="Subtotal">Sub-Total</div>
+                            <div class="items">2 items</div>
+                            <div class="items"><%=session.getAttribute("totalPoints")%> points</div>
+                        </div>
+                        <div class="total-amount">$<%=session.getAttribute("totalPrice")%></div>
+                    </div>
+                    <form action="checkout" method="post">
+                        <input class="button" type="submit" value="Checkout"/>
+                    </form>
+                </div>
+                </div>
     </body>
 </html>
