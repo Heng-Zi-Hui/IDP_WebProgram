@@ -58,7 +58,6 @@
             Postal Code: <b><%=c.getPostalCode()%></b><br/>
             Mobile Number: <b><%=c.getMobile()%></b><br/>
             --%>
-            <br/>
             <img src="images/user.png" alt="user icon" width=50%/><br/>
             <h2><%=c.getFullName()%></h2>
             

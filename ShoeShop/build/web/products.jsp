@@ -193,9 +193,9 @@
                                 %>
                             </select>
                             <div class="qtyNumber">
-                                <span class="minus">-</span>
+                                <span class="minus btn">-</span>
                                 <input name="quantity" id="qtyInput" type="text" value="1"/>
-                                <span class="plus">+</span>
+                                <span class="plus btn">+</span>
                             </div><br>
                             <%=product.getStock()%> in stock
                             <br>

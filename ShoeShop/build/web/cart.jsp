@@ -103,11 +103,9 @@
         
         
             <div class="Cart-Items">
-                <%--
-                <div class=”image-box”>
-                    <img src=”images/<%=cartline.getImage()%>” style= height:”120px”; />
+                <div class="image-box">
+                    <img src="images/<%=cartline.getImageFile()%>" height="120px" width="120px" />
                 </div>
-                --%>
                 <div class="about">
                     <h2 class="title"><%=cartline.getDescription()%></h2>
                     <h3 class="subtitle"><%=cartline.getBrand()%></<h3>
@@ -117,9 +115,9 @@
                 <div class="prices"></div>
                 
                 <div class="counter">
-                    <div class="btn">+</div>
-                    <div class="count"><%=cartline.getQuantity()%></div>
                     <div class="btn">-</div>
+                    <div class="count"><%=cartline.getQuantity()%></div>
+                    <div class="btn">+</div>
                 </div>
                 
                 <div class="prices">
