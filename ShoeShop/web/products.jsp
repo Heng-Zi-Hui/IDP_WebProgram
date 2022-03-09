@@ -111,7 +111,7 @@
             
             </table>
             --%>
-            
+            <div class="outergrid">
             <% 
             List<Product> searchresult = (ArrayList<Product>) session.getAttribute("searchresult");
             
@@ -122,7 +122,7 @@
             }else{
                 for(Product product:searchresult){
                 %>
-                <div class="outergrid">
+                
                     <div class="innergrid">
                         <div><img src="images/<%=product.getImageFile()%>" alt="product image"/></div>
                         <div><%=product.getDescription()%></div>
@@ -176,12 +176,12 @@
                         </form>
                         </div>
                     </div>
-                </div>
+                
                 <%
                 }
                 
             }
             %>
-        
+            </div>
     </body>
 </html>

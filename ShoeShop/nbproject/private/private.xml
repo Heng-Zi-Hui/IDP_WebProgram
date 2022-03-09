@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/web/products.jsp</file>
-            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/CartLine.java</file>
-            <file>file:/C:/Users/fepit/Documents/NTU_Y2S2/idp/IDP_WebProgram/ShoeShop/src/java/ee/mote/SearchProductsServlet.java</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/index.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/register.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/login.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/profile.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/css/master.css</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/src/java/ee/mote/SearchProductsServlet.java</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/cart.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/changePassword.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/products.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/web/orderPlaced.jsp</file>
+            <file>file:/Users/zihui/Documents/GitHub/IDP_WebProgram/ShoeShop/src/java/ee/mote/Product.java</file>
         </group>
     </open-files>
 </project-private>
