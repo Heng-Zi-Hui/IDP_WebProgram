@@ -41,6 +41,8 @@ public class AddToCartServlet extends HttpServlet{
             
             String itemId = request.getParameter("productId");
             String size = request.getParameter("size");
+            String qty = request.getParameter("quantity");
+            int qtyToAdd = Integer.valueOf(qty);
             
             Connection connection = null;
             PreparedStatement preparedStatement = null;
@@ -65,6 +67,7 @@ public class AddToCartServlet extends HttpServlet{
 
                 resultset.next();
                 int id = resultset.getInt("itemId");
+                int stock = resultset.getInt("stock");
                 
                 if(size.equals("empty"))
                 {
@@ -94,30 +97,44 @@ public class AddToCartServlet extends HttpServlet{
                         }
                         else
                         {
-                            cart.get(repeatIndex).increaseQty();
+                            if(cart.get(repeatIndex).getQuantity()+qtyToAdd > stock){
+                                request
+                                   .setAttribute("message",
+                                    "There is only "+ stock +"of this item left");
+                            }else{
+                                cart.get(repeatIndex).increaseQty(qtyToAdd);
 
-                            request
+                                request
                                    .setAttribute("message",
                                     "Item successfully added to cart");
+                            }
+                            
                         }
 
                     }
                     else
                     {
-                        CartLine line = new CartLine();
+                        if(qtyToAdd > stock){
+                            request
+                               .setAttribute("message",
+                                "There is only "+ stock +"of this item left");
+                        }else{
+                            CartLine line = new CartLine();
                         line.setItemId(id);
                         line.setDescription(resultset.getString("itemDescription"));
                         line.setBrand(resultset.getString("brand"));
-                        line.setQuantity(1);
+                        line.setQuantity(qtyToAdd);
                         line.setPrice(resultset.getFloat("price"));
                         line.setPoints(resultset.getInt("points"));
                         line.setSize(size);
+                        line.setImageFile(resultset.getString("imageFile"));
 
                         cart.add(line);
 
                         request
                                .setAttribute("message",
                                 "Item successfully added to cart");
+                        }
                     }
                 }
                 else

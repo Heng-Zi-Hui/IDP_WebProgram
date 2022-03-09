@@ -23,13 +23,14 @@ public class CartLine implements Serializable{
     private float price;
     private int points;
     private String size;
+    private String imageFile;
 
-
+    
     public CartLine() {
     }
     
-    public void increaseQty(){
-        quantity++;
+    public void increaseQty(int qty){
+        quantity += qty;
     }
 
     public int getItemId() {
@@ -86,6 +87,14 @@ public class CartLine implements Serializable{
 
     public void setSize(String size) {
         this.size = size;
+    }
+    
+    public String getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(String imageFile) {
+        this.imageFile = imageFile;
     }
     
 }
