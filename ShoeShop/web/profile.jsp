@@ -48,8 +48,8 @@
         </div>
         
         <h1>Your Profile</h1>
-        <div class="formborder textalignment">
-            
+        <div class="textalignment">
+            <img src="images/user.png" alt="user icon" width=50%/><br/>
             Full Name: <b><%=c.getFullName()%></b><br/>
             Email: <b><%=c.getEmail()%></b><br/>
             Address line1: <b><%=c.getAddress1()%></b><br/>

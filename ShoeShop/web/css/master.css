@@ -140,7 +140,8 @@ h1 {
     padding: 10px;
 }
 
-.displaySub img {
+/* index.jsp and profile.jsp rounded image adjustment*/
+.displaySub img, .textalignment img {
     float: center;
     border-radius: 50%;
 }
@@ -177,5 +178,10 @@ h1 {
 .textalignment p{
     text-align: left;
     font-size: 15px;
-    
+}
+
+.textalignment {
+    float: center;
+    margin: auto;
+    width: 430px;
 }
