@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="css/master.css"> <%--Link to css--%>
+        <link rel="icon" type="image/png" href="images/ZacZee's-logos-white.png"/> <%--Favicon--%>
         <title>Check Out</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,46 +20,45 @@
                 Customer c = (Customer) session.getAttribute("customer");
             %>
         
-        <div>
-            <button style="float: left"><a href="index.jsp" ><b>Mõte Inc</b></a> </button>
+        <div class="navbar">
+            <a href="index.jsp" ><img src="images/ZacZee's-logo-nav.png" alt="ZacZee's" width="30" Height="30"/></a>
              
             
             <% if(c == null){ %>
             
-            <button style="float: left"><a href="register.jsp" >Register</a> </button>
-            <button><a href="login.jsp" ><b>Login</b></a> </button>
+            <a href="register.jsp" >Register</a>
+            <a href="login.jsp" >Login</a>
             
             <% }else{ %>
             
-            <form action="search" method="post" style="float: left">
+            <form class="navForm" action="search" method="post" style="float: left">
                 <input type="submit" value="Products"/>
             </form>
-            <form action="cart" method="get" style="float: left">
+            <form class="navForm" action="cart" method="get" style="float: left">
                 <input type="submit" value="Cart"/>
             </form> 
-            <form action="profile" method="get" style="float: left">
+            <form class="navForm" action="profile" method="get" style="float: left">
                 <input type="submit" value="Profile"/>
             </form> 
-            <form action="logout" method="post">
+            <form class="navForm" action="logout" method="post">
                 <input type="submit" value="Logout"/>
             </form>
             
             <% } %>
         </div>
         
+        <br/><br/><br/>
         <h1>Order Placed!</h1>
-        <p>
-            You have successfully checked out your order.
-        </p>
-        <p>
-            Full Name: <b><%=c.getFullName()%></b><br/>
-            Points You Received: <b><%=session.getAttribute("orderPoints")%></b><br/>
-            Total Amount Payable: <b>$<%=session.getAttribute("orderPrice")%></b>
-        </p>
-        <p>
-            <form action="search" method="post">
-                <input type="submit" value="Back to shopping"/>
-            </form>
-        </p>
+        
+        <div class="card cardPadding">
+            <p>
+                You have successfully checked out your order.
+            </p>
+            <p>
+                Full Name: <b><%=c.getFullName()%></b><br/>
+                Points You Received: <b><%=session.getAttribute("orderPoints")%></b><br/>
+                Total Amount Payable: <b>$<%=session.getAttribute("orderPrice")%></b>
+            </p>
+        </<div>
     </body>
 </html>

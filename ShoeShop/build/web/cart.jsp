@@ -95,7 +95,7 @@
             
             if(cart == null || cart.size() <= 0){
             %>
-            <tr><td colspan="5">(You have not added anything in your cart :/)</td></tr>
+            <p class="emptyCart">(You have not added anything in your cart :/)</p>
             <%
             }else{
                 for(CartLine cartline:cart){
