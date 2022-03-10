@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cart
-    Created on : 17 Jun, 2020, 10:15:32 PM
-    Author     : fepit
---%>
 
 <%@page import="ee.mote.Customer"%>
 <%@page import="ee.mote.CartLine"%>

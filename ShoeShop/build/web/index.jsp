@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index.jsp
-    Created on : 22 Jun, 2020, 1:09:31 PM
-    Author     : fepit
---%>
 
 <%@page import="ee.mote.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

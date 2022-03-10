@@ -1,9 +1,3 @@
-<%-- 
-    Document   : register
-    Created on : 16 Jun, 2020, 4:33:56 PM
-    Author     : fepit
---%>
-
 <%@page import="ee.mote.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

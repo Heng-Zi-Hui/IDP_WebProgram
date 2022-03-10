@@ -179,10 +179,6 @@ public class CheckoutServlet extends HttpServlet{
                 rd.forward(request, response);
             }
             
-            
-            
-            
-            
         }
     
 }

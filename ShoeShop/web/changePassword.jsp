@@ -1,8 +1,3 @@
-<%-- 
-    Document   : changePassword
-    Created on : 20 Jun, 2020, 1:30:43 PM
-    Author     : fepit
---%>
 
 <%@page import="ee.mote.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
