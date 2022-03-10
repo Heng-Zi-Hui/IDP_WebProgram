@@ -1,9 +1,3 @@
-<%-- 
-    Document   : orderPlaced
-    Created on : 18 Jun, 2020, 9:56:46 PM
-    Author     : fepit
---%>
-
 <%@page import="ee.mote.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

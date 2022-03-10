@@ -101,6 +101,4 @@ public class Product implements Serializable{
         this.points = points;
     }
     
-    
-    
 }

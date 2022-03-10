@@ -169,10 +169,7 @@ public class AddUserServlet extends HttpServlet{
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(AddUserServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-            
-            
-            
+           
         }
     
 }

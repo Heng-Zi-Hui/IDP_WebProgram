@@ -83,6 +83,4 @@ public class Customer implements Serializable{
         this.mobile = mobile;
     }
     
-    
-    
 }

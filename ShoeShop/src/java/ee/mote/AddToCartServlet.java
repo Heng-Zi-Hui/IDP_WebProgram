@@ -213,8 +213,5 @@ public class AddToCartServlet extends HttpServlet{
             rd.forward(request, response);
         }
             
-            
-            
         }
-    
 }

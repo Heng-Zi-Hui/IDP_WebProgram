@@ -1,9 +1,3 @@
-<%-- 
-    Document   : products
-    Created on : 15 Jun, 2020, 2:15:07 PM
-    Author     : fepit
---%>
-
 <%@page import="ee.mote.Customer"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -67,54 +61,6 @@
         <font color="red">
                     <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
         </font>
-            <%--
-            <table>
-                <tr>
-                    <td></td>
-                    <td><b>Item Description</b></td>
-                    <td><b>Brand</b></td>
-                    <td>Sex</td>
-                    <td>Category</td>
-                    <td><b>Price</b></td>
-                    <td><b>Points</b></td>
-                    <td>Stock</td>
-                    <td></td>
-                </tr>
-                
-                <% 
-            List<Product> searchresult = (ArrayList<Product>) session.getAttribute("searchresult");
-            
-            if(searchresult == null || searchresult.size() <= 0){
-            %>
-            <tr><td colspan="5">(No result is found)</td></tr>
-            <%
-            }else{
-                for(Product product:searchresult){
-                %>
-                <tr>
-                    <td><%=product.getImageFile()%></td>
-                    <td><%=product.getDescription()%></td>
-                    <td><%=product.getBrand()%></td>
-                    <td><%=product.getSex()%></td>
-                    <td><%=product.getCategory()%></td>
-                    <td>$<%=product.getPrice()%></td>
-                    <td><%=product.getPoints()%></td>
-                    <td><%=product.getStock()%></td>
-                    <td>
-                        <form action="addproduct" method="post">
-                            <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>
-                            <input type="submit" value="Add to Cart"/>
-                        </form>
-                    </td>
-                </tr>
-                <%
-                }
-                
-            }
-            %>
-            
-            </table>
-            --%>
             <div class="outergrid">
             <% 
             List<Product> searchresult = (ArrayList<Product>) session.getAttribute("searchresult");
