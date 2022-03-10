@@ -135,11 +135,10 @@
                             <form action="addproduct" method="post">
                             <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>
                             
-                            <br>
                             <%
                                 if(product.getStock()==0){
                             %>
-                                <br/>    
+                                <br/><br/>    
                                 <%-- <input value="Out of Stock"/> --%>
                                 <button class="outOfStock" disabled>-Out of Stock-</button>
                             <%
@@ -187,9 +186,9 @@
                                             }
                                         %>
                                     </select>
-                                    <br/>
+                                    <br/><br/>
                                     <%=product.getStock()%> in stock
-                                    <br>
+                                    <br/><br/>
                                     <input type="submit" value="Add to Cart"/>
                             <%
                                 }
