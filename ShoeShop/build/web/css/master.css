@@ -120,6 +120,22 @@ h1 {
     opacity: 0.8;
 }
 
+.outOfStock {
+    float: center;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #333;
+    border-color: transparent;
+    border-radius: 15%;
+}
+
+.outOfStock:hover {
+    opacity: 1;
+}
+
 /* Adjust logo size in nav*/
 .navbar img {
     max-width: 100%;

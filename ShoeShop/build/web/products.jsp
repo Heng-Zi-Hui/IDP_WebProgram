@@ -134,56 +134,60 @@
                         <div>
                             <form action="addproduct" method="post">
                             <input type="hidden" name="productId" value="<%=product.getItemId()%>"/>
-                            <select name="size">
-                                    <option value="empty">size(US)</option>
-                                <% 
-                                    if(product.getSex().equals("women")){
-                                %>
-                                    <option value="W 5">W 5</option>
-                                    <option value="W 6">W 6</option>
-                                    <option value="W 7">W 7</option>
-                                    <option value="W 8">W 8</option>
-                                    <option value="W 9">W 9</option>
-                                    <option value="W 10">W 10</option>
-                                    <option value="W 11">W 11</option>
-                                    <option value="W 12">W 12</option>
-                                    <option value="W 13">W 13</option>
-                                <%
-                                    }else if(product.getSex().equals("men")){
-                                %>
-                                    <option value="M 3">M 3</option>
-                                    <option value="M 4">M 4</option>
-                                    <option value="M 5">M 5</option>
-                                    <option value="M 6">M 6</option>
-                                    <option value="M 7">M 7</option>
-                                    <option value="M 8">M 8</option>
-                                    <option value="M 9">M 9</option>
-                                    <option value="M 10">M 10</option>
-                                    <option value="M 11">M 11</option>
-                                <%
-                                    }else if(product.getSex().equals("unisex")){
-                                %>
-                                    <option value="M 3 | W 5">M 3 | W 5</option>
-                                    <option value="M 4 | W 6">M 4 | W 6</option>
-                                    <option value="M 5 | W 7">M 5 | W 7</option>
-                                    <option value="M 6 | W 8">M 6 | W 8</option>
-                                    <option value="M 7 | W 9">M 7 | W 9</option>
-                                    <option value="M 8 | W 10">M 8 | W 10</option>
-                                    <option value="M 9 | W 11">M 9 | W 11</option>
-                                    <option value="M 10 | W 12">M 10 | W 12</option>
-                                    <option value="M 11 | W 13">M 11 | W 13</option>
-                                <%
-                                    }
-                                %>
-                            </select>
+                            
                             <br>
                             <%
                                 if(product.getStock()==0){
                             %>
-                                    <input value="Out of Stock"/>
+                                <br/>    
+                                <%-- <input value="Out of Stock"/> --%>
+                                <button class="outOfStock" disabled>-Out of Stock-</button>
                             <%
                                 }else{
                             %>
+                                        <select name="size">
+                                        <option value="empty">size(US)</option>
+                                        <% 
+                                            if(product.getSex().equals("women")){
+                                        %>
+                                            <option value="W 5">W 5</option>
+                                            <option value="W 6">W 6</option>
+                                            <option value="W 7">W 7</option>
+                                            <option value="W 8">W 8</option>
+                                            <option value="W 9">W 9</option>
+                                            <option value="W 10">W 10</option>
+                                            <option value="W 11">W 11</option>
+                                            <option value="W 12">W 12</option>
+                                            <option value="W 13">W 13</option>
+                                        <%
+                                            }else if(product.getSex().equals("men")){
+                                        %>
+                                            <option value="M 3">M 3</option>
+                                            <option value="M 4">M 4</option>
+                                            <option value="M 5">M 5</option>
+                                            <option value="M 6">M 6</option>
+                                            <option value="M 7">M 7</option>
+                                            <option value="M 8">M 8</option>
+                                            <option value="M 9">M 9</option>
+                                            <option value="M 10">M 10</option>
+                                            <option value="M 11">M 11</option>
+                                        <%
+                                            }else if(product.getSex().equals("unisex")){
+                                        %>
+                                            <option value="M 3 | W 5">M 3 | W 5</option>
+                                            <option value="M 4 | W 6">M 4 | W 6</option>
+                                            <option value="M 5 | W 7">M 5 | W 7</option>
+                                            <option value="M 6 | W 8">M 6 | W 8</option>
+                                            <option value="M 7 | W 9">M 7 | W 9</option>
+                                            <option value="M 8 | W 10">M 8 | W 10</option>
+                                            <option value="M 9 | W 11">M 9 | W 11</option>
+                                            <option value="M 10 | W 12">M 10 | W 12</option>
+                                            <option value="M 11 | W 13">M 11 | W 13</option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>
+                                    <br/>
                                     <%=product.getStock()%> in stock
                                     <br>
                                     <input type="submit" value="Add to Cart"/>
