@@ -116,6 +116,10 @@ h1 {
     border-radius: 15%;
 }
 
+.innergrid input:hover{
+    opacity: 0.8;
+}
+
 /* Adjust logo size in nav*/
 .navbar img {
     max-width: 100%;
