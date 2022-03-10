@@ -139,22 +139,29 @@ public class AddToCartServlet extends HttpServlet{
                 }
                 else
                 {
-                    CartLine line = new CartLine();
-                    line.setItemId(id);
-                    line.setDescription(resultset.getString("itemDescription"));
-                    line.setBrand(resultset.getString("brand"));
-                    line.setQuantity(1);
-                    line.setPrice(resultset.getFloat("price"));
-                    line.setPoints(resultset.getInt("points"));
-                    line.setImageFile(resultset.getString("imageFile"));
-                    line.setSize(size);
-                    line.setStock(resultset.getInt("stock"));
+                    if(qtyToAdd > stock){
+                            request
+                               .setAttribute("message",
+                                "There is only "+ stock +"of this item left");
+                    }else{
+                        CartLine line = new CartLine();
+                        line.setItemId(id);
+                        line.setDescription(resultset.getString("itemDescription"));
+                        line.setBrand(resultset.getString("brand"));
+                        line.setQuantity(1);
+                        line.setPrice(resultset.getFloat("price"));
+                        line.setPoints(resultset.getInt("points"));
+                        line.setImageFile(resultset.getString("imageFile"));
+                        line.setSize(size);
+                        line.setStock(resultset.getInt("stock"));
 
-                    cart.add(line);
+                        cart.add(line);
+
+                        request
+                               .setAttribute("message",
+                                "Item successfully added to cart");
+                    }
                     
-                    request
-                           .setAttribute("message",
-                            "Item successfully added to cart");
                 }
                 
                 
