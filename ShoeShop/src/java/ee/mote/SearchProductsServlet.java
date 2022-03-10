@@ -43,7 +43,7 @@ public class SearchProductsServlet extends HttpServlet{
             List<Product> results = new ArrayList<Product>();
             
             String searchterm = request.getParameter("searchterm");
-            String sqlSelect = "SELECT * FROM shoes WHERE itemDescription LIKE ?";
+            String sqlSelect = "SELECT * FROM shoes WHERE (itemDescription LIKE ?) OR (brand LIKE ?) OR (sex LIKE ?) OR (category LIKE ?)";
             
             if(searchterm != null)
             {
@@ -57,6 +57,10 @@ public class SearchProductsServlet extends HttpServlet{
                     statement = connection.prepareStatement(sqlSelect);
 
                     statement.setString(1, "%" + searchterm + "%");
+                    statement.setString(2, "%" + searchterm + "%");
+                    statement.setString(3, "%" + searchterm + "%");
+                    statement.setString(4, "%" + searchterm + "%");
+                    
                     // Make a query to the DB using ResultSet through the Statement
                     resultset = statement.executeQuery();
 

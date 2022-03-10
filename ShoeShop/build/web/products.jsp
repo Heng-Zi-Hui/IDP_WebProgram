@@ -177,9 +177,20 @@
                                 %>
                             </select>
                             <br>
-                            <%=product.getStock()%> in stock
-                            <br>
-                            <input type="submit" value="Add to Cart"/>
+                            <%
+                                if(product.getStock()==0){
+                            %>
+                                    <input value="Out of Stock"/>
+                            <%
+                                }else{
+                            %>
+                                    <%=product.getStock()%> in stock
+                                    <br>
+                                    <input type="submit" value="Add to Cart"/>
+                            <%
+                                }
+                            %>
+                            
                         </form>
                         </div>
                     </div>
