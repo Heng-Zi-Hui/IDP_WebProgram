@@ -49,11 +49,14 @@
         </div>
         <br/><br/><br/>
         <h1>Registration Form</h1>
-        
+        <div style="text-align: center">
+                <font color="red">
+                        <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
+                </font>
+                <br/>
+        </div>
         <form class="formborder" name="customer" action="validate" method="post" onsubmit="return validateForm()">
-            <font color="red">
-                    <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
-            </font>
+            
             <div class="container">
                 <label for="fullName"><b>Full Name</b></label><br/>
                 <input type="text" placeholder="Enter Full Name" name="fullName" required><br/>

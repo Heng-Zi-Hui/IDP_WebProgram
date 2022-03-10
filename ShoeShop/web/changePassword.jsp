@@ -48,10 +48,12 @@
         
         <br/><br/><br/>
         <h1>Change Password</h1>
-        
-        <font color="red">
+        <div style="text-align: center">
+            <font color="red">
                     <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
             </font>
+            <br/>
+        </div>
         
         <form class="formborder" name="changePassword" action="changePassword" method="post">
             <div class="container">

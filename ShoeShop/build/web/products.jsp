@@ -64,9 +64,13 @@
                 </div>
             </p><br/><br/>
         </form>
-        <font color="red">
-                    <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
-        </font>
+        
+        <div style="text-align: center">
+            <br/><br/>
+            <font color="red">
+                        <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
+            </font>
+        </div>
             <%--
             <table>
                 <tr>

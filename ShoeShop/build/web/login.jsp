@@ -48,11 +48,12 @@
         
         <br/><br/><br/>
         <h1>Login</h1>
-        
-        <font color="red">
-                    <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
-        </font>
-        
+        <div style="text-align: center">
+            <font color="red">
+                        <%=request.getAttribute("message")==null?"":request.getAttribute("message")%><br/>
+            </font>
+            <br/>
+        </div>
         <form class="formborder" name="customer" action="authenticate" method="post">
             <div class="container">
                 <label for="email"><b>Email</b></label><br/>
